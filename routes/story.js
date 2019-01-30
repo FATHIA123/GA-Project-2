@@ -2,9 +2,20 @@ const express = require("express");
 const router = express.Router();
 const storyController = require("../controllers/story");
 
-router.post("/", storyController.requireAuth, storyController.create);
-router.get("/new", storyController.requireAuth, storyController.new);
+
+// Render FORM to create a new story of connect
+
+router.get("/new",  storyController.new);
+// when a story is written <post> show it on the home page
+router.post("/", storyController.create);
+// show one story
 router.get("/:id", storyController.show);
-router.put("/:id", storyController.requireAuth, storyController.update);
+
+// update the story
+router.put("/:id", storyController.update);
+
+// delete the story
+router.delete("/:id", storyController.delete);
+
 
 module.exports = router;

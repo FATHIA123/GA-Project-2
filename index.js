@@ -1,8 +1,18 @@
-// const express = require("express");
-// const hbs = require("hbs");
+const express = require("express");
+const hbs = require("hbs");
+const body = require("body-parser")
+const methodOverride = require("method-override")
+// const passport = require('passport')
 
-// const app = express();
+// require('./config/passport')(passport)
+// app.use(passport.initialize())
+// app.use(passport.session())
 
-// app.use(require("./routes/index.js"));
+const app = express();
+app.set("view engine", "hbs");
+app.use(body.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
-// app.listen(3000, () => console.log("server is running"));
+app.use(require("./routes/index.js"));
+
+app.listen(3000, () => console.log("server is running"));

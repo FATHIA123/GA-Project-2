@@ -1,15 +1,14 @@
 // comment schema 
 // stroy schema 
-
-const mongoose = require('mongoose')
+const mongoose = require("../db/connection");
 const Schema = mongoose.Schema;
 
 
-const StorySchema = new Schema({
+const Story = new Schema({
   title: String,
   createdAt: {
     type: Date,
-    default: Date.now()
+    default: Date.now
   },
   content: String
 })
@@ -23,6 +22,7 @@ const StorySchema = new Schema({
 // };
 
 
-mongoose.model('Story', StorySchema)
 
-module.exports = mongoose
+
+module.exports = mongoose.model("Story", Story)
+// module.exports = mongoose.model("User", User);
