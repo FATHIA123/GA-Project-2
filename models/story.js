@@ -15,9 +15,8 @@ const Story = new Schema({
 
 
 
-
 // module.exports = {
-//   Story: mongoose.model("story", StorySchema ),
+//   Story: mongoose.model("Story", Story),
 //   Comment: mongoose.model("Comment", Comment)
 // };
 

@@ -39,23 +39,21 @@ show: (req, res) => {
     })
  
    },
-update: (req, res) => {
-    // let { content } = req.body;
-    // Story.findOne({ _id: req.params.id }).then(story => {
-    //   story.push({
-    //     title,
-    //     content,
-    //   });
-    //   story.save(err => {
-    //     res.redirect(`/story/${story._id}`);
-    //   });
-    // });
-    // let { review } = req.body.cereal
-    //     Story.findOneAndUpdate(
-    //         { _id: req.params.id}, 
-    //         {$set:{review:review}})
-    //     .then(() => {res.redirect('/')})
-},
+// update: (req, res) => {
+//     // let { content } = req.body;
+//     // Story.findOne({ _id: req.params.id }).then(story => {
+//     //   
+//     //find content feild and change 
+//     //   story.save(err => {
+//     //     res.redirect(`/story/${story._id}`);
+//     //   });
+//     // });
+//     // let { review } = req.body.cereal
+//     //     Story.findOneAndUpdate(
+//     //         { _id: req.params.id}, 
+//     //         {$set:{review:review}})
+//     //     .then(() => {res.redirect('/')})
+// },
 
 delete: (req, res) => {
     Story.findOneAndRemove({ _id: req.params.id })
