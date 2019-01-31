@@ -1,7 +1,7 @@
 // const { Tweet, Comment } = require("../models/story");
 // call models 
 
-const { Story } = require("../models/story");
+const { Story, Comment } = require("../models/story");
 
 
 module.exports = {
@@ -43,17 +43,20 @@ update: (req, res) => {
    
     let { content } = req.body;
     Story.findOne({ _id: req.params.id }).then(story => {
-      story.comments.push({
-        content,
-        author: req.user._id
-      });
-      story.save(err => {
-        res.redirect(`/story/${story._id}`);
+     Comment.create({ content }).then(newComment => {
+         story.comments.push(newComment);
+     story.save(err => {
+        res.redirect(`/story/${story.id}`);
       });
     });
+})
+      
 },
 
-
+//   story.comments.push({
+    //     content,
+    //     // author: req.user._id
+    //   });
 
 
 

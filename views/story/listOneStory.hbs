@@ -43,12 +43,12 @@
 
 
 
-
+{{!-- /story/${story._id} --}}
 
 <div class="card">
   <div class="card-content">
     <h4 class="card-title">Add a comment:</h6>
-    <form method="POST" action="/story/{{id}}?_method=PUT" class="row">
+    <form method="POST" action="/story/{{story.id}}?_method=PUT" class="row">
       <p class="input-field inline col s10">
         <label for="content"></label>
         <input type="text" name="content" id="">
