@@ -5,7 +5,15 @@ const Story = require("../models/story");
 
 
 module.exports = {
-   
+ //list of stories  
+    index: (req, res) => {   
+        Story.find({})
+        .sort({ createdAt: -1 })
+        .then( stories => {
+            res.render('story/listOfStories', { stories })
+        })
+     
+       },
 // Render FORM to create a new story of connect
 new: (req, res) => {
     res.render("story/createStory");

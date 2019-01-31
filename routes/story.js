@@ -3,6 +3,9 @@ const router = express.Router();
 const storyController = require("../controllers/story");
 
 
+// list of stories route
+router.get('/', storyController.index);
+
 // Render FORM to create a new story of connect
 
 router.get("/new",  storyController.new);

@@ -14,17 +14,16 @@
 
      <header class="site-header">
       <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper indigo darken-3">
           <a href="" class="brand-logo left">Connect</a>
           <ul class="right">
           {{!-- {{{#if currentUser}} --}}
             <li><a href="/">Home</a></li>            
-            <li><a href="/">Your Stories</a></li>
+            <li><a href="/story">Stories</a></li>
             <li><a href="/story/new">Create Story</a></li>
-            <li><a href="/user/logout">Log Out</a></li>
           {{!-- {{else}} --}}
-            <li><a href="/user/login">Log In</a></li>
-            <li><a href="/user/sign-up">Sign Up</a></li>
+            {{!-- <li><a href="/user/login">Log In</a></li> --}}
+            {{!-- <li><a href="/user/sign-up">Sign Up</a></li> --}}
           {{!-- {{/if}} --}}
           </ul>
         </div>
@@ -33,7 +32,16 @@
     <main class="container">
       {{{ body }}}
     </main>
-   
+    <footer class="page-footer indigo darken-3" style="position:fixed;bottom:0;left:0;width:100%;" >
+          
+          <div class="footer-copyright black" >
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+            
 </body> 
 </html> 
 

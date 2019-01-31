@@ -3,3 +3,8 @@
     max-width: 800px;
     margin: 0 auto;
   }
+
+
+  .parallax-container {
+    height: 500px;
+  }

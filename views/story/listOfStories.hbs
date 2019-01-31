@@ -1,15 +1,24 @@
 {{!-- list all the stories in the db  --}}
 
-{{#each stories}}
-        <div>
-            {{!-- <h1></h1> --}}
-            <h1><a href="/story/{{_id}}">{{ title }}</a></a></h1>
-        </div>
-        <div>
-            <p> {{ createdAt }} </p>
-        </div>
-        <div>
-            <p> {{ content }} </p>
-        </div>
-{{/each}}
 
+
+{{#each stories}}
+<div class="col s12 m7" >
+    
+    <div class="card horizontal" >
+      <div class="card-image">
+        <img src="https://lorempixel.com/200/190/nature/6">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>{{ content }}</p>
+          <p>{{ createdAt }}</p>
+
+        </div>
+        <div class="card-action">
+          <a href="/story/{{_id}}">{{ title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ {{/each}}
