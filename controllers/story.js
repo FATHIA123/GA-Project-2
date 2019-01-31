@@ -53,10 +53,9 @@ update: (req, res) => {
       
 },
 
-//   story.comments.push({
-    //     content,
-    //     // author: req.user._id
-    //   });
+edit: (req, res) => {
+    res.render("story/editStory");
+  },
 
 
 

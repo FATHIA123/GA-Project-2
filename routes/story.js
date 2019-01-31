@@ -16,6 +16,9 @@ router.get("/:id", storyController.show);
 
 // update the comment
 router.put("/:id", storyController.update);
+// edit
+router.put("/:id/edit", storyController.edit);
+
 
 // delete the story
 router.delete("/:id", storyController.delete);
