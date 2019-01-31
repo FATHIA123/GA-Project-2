@@ -1,7 +1,7 @@
 // const { Tweet, Comment } = require("../models/story");
 // call models 
 
-const Story = require("../models/story");
+const { Story } = require("../models/story");
 
 
 module.exports = {
@@ -39,21 +39,23 @@ show: (req, res) => {
     })
  
    },
-// update: (req, res) => {
-//     // let { content } = req.body;
-//     // Story.findOne({ _id: req.params.id }).then(story => {
-//     //   
-//     //find content feild and change 
-//     //   story.save(err => {
-//     //     res.redirect(`/story/${story._id}`);
-//     //   });
-//     // });
-//     // let { review } = req.body.cereal
-//     //     Story.findOneAndUpdate(
-//     //         { _id: req.params.id}, 
-//     //         {$set:{review:review}})
-//     //     .then(() => {res.redirect('/')})
-// },
+update: (req, res) => {
+   
+    let { content } = req.body;
+    Story.findOne({ _id: req.params.id }).then(story => {
+      story.comments.push({
+        content,
+        author: req.user._id
+      });
+      story.save(err => {
+        res.redirect(`/story/${story._id}`);
+      });
+    });
+},
+
+
+
+
 
 delete: (req, res) => {
     Story.findOneAndRemove({ _id: req.params.id })

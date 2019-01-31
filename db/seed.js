@@ -2,7 +2,7 @@ const mongoose = require('./connection')
 const seeds = require('./seed.json')
 
 // const Story = mongoose.model('Story')
-const Story = require("../models/story")
+const { Story }= require("../models/story")
 mongoose.Promise = Promise
 
 Story.remove({}).then(() => {
