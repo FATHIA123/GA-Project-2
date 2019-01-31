@@ -42,7 +42,7 @@ show: (req, res) => {
 update: (req, res) => {
    
     let { content } = req.body;
-    Story.findOne({ _id: req.params.id }).then(story => {
+    Story.findOneAndUpdate({ _id: req.params.id }).then(story => {
      Comment.create({ content }).then(newComment => {
          story.comments.push(newComment);
      story.save(err => {
