@@ -15,7 +15,7 @@ router.post("/", storyController.create);
 router.get("/:id", storyController.show);
 
 // update the story
-router.put("/:id", storyController.update);
+// router.put("/:id", storyController.update);
 
 // delete the story
 router.delete("/:id", storyController.delete);

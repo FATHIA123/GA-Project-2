@@ -11,10 +11,10 @@ const router = express.Router();
 router.use('/', require('./application.js'));
 router.use('/user', require('./user'));
 router.use('/story', require('./story'));
-router.use('/comment', require('./comment'));
+// router.use('/comment', require('./comment'));
 
-// // router.all('*', (req, res) => {
-// //   res.status(400).send();
-// // });
+ router.all('*', (req, res) => {
+  res.status(400).send();
+});
 
 module.exports = router;
