@@ -9,7 +9,7 @@ const router = express.Router();
 
 
 router.use('/', require('./application.js'));
-router.use('/user', require('./user'));
+// router.use('/user', require('./user'));
 router.use('/story', require('./story'));
 // router.use('/comment', require('./comment'));
 
