@@ -14,9 +14,10 @@
         <input type="submit" value="Remove">
         </form>
 
-                <form class= "" action = "./editStory.hbs" method="GET">
+        {{!-- <form class= "" action = "/{{id}}/editStory.hbs" method="GET">
         <input type="submit" value="Edit">
-        </form>
+        </form> --}}
+        <button><a href="/story/{{id}}/edit">Edit </a></button>
     {{/with}}
 {{/if}}
 
