@@ -65,13 +65,13 @@ update: (req, res) => {
     Story.findOneAndUpdate({ _id: req.params.id },
         {$set:{ content: content } },
          { $set: { title: title} })
-
         // req.body)
         .then( (story) => {
         // res.redirect("/story")
         res.redirect(`/story/${story._id}`);
 
     })
+  
   },
 // populate information in 
 edit: (req, res) => {
