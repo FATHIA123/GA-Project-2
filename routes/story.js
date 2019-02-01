@@ -15,7 +15,7 @@ router.post("/", storyController.create);
 router.get("/:id", storyController.show);
 
 // update the comment
-router.put("/:id", storyController.update);
+router.patch("/:id", storyController.update);
 // edit
 router.get("/:id/edit", storyController.edit);
 

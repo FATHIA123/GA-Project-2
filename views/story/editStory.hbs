@@ -1,14 +1,54 @@
+{{!-- <section class="form-container">
+  <h4>Update Your Story</h4>
+  <form action="/story/{{id}}?_method=PUT" method="post" class="story-form">
+   
+    <p class="input-field">
+      <textarea name="title" cols="10" rows="5" placeholder="Title">{{title}}</textarea>
+    </p>
+   
+    <p class="input-field">
+      <textarea name="story[content]" cols="30" rows="10" placeholder="Tell Your Story">{{content}}</textarea>
+    </p>
+    
+    <p class="input-field">
+      <input type="submit" value="EDIT" class="btn waves-effect waves-light">
+    </p>
+
+  </form>
+</section> --}}
+{{#with story }}
 <section class="form-container">
   <h4>Update Your Story</h4>
-  <form action="/story" method="post" class="story-form">
-    <p class="input-field">
-      <textarea name="title" cols="10" rows="5" placeholder="Title"></textarea>
-    </p>
-    <p class="input-field">
-      <textarea name="story[content]" cols="30" rows="10" placeholder="Tell Your Story"></textarea>
-    </p>
-    <p class="input-field">
-      <input type="submit" value="Story" class="btn waves-effect waves-light">
-    </p>
+  <form action="/story/{{ id }}?_method=PATCH" method="POST">
+    <div>
+      <label class="headings" for="name">Name of title: </label>
+      {{!-- <input type="text" value="{{title}}" name="title"> --}}
+         <textarea name="title" class="materialize-textarea">{{title}}</textarea>
+
+    </div>
+
+    <div>
+      <label class="headings" for="content">content: </label>
+      <textarea name="content" class="materialize-textarea">{{content}}</textarea>
+    </div>
+
+    {{!-- <div>
+      <label class="headings" for="ingredients">Instructions: </label>
+      <textarea name="instructions" class="materialize-textarea">{{instructions}}</textarea>
+    </div> --}}
+
+
+  {{!-- <form action="/story/{{ id }}?_method=PATCH" method="POST"> --}}
+
+     <input type="submit" value="Update" class="btn #2196f3 blue">
   </form>
 </section>
+<br>
+
+{{!-- <div>
+  <form action="/story/{{ id }}?_method=DELETE" method="POST">
+    <input type="submit" value="DELETE" class="btn-large red accent-4">
+  </form>
+</div>  --}}
+
+{{/with}}
